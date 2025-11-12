@@ -1,0 +1,17 @@
+{
+  "name": "testing-and-debugging-ensuring-mern-app-reliability-perrymason12",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Week 6 assignment: comprehensive testing and debugging strategy for a MERN application.",
+  "scripts": {
+    "install-all": "npm --prefix server install && npm --prefix client install",
+    "test": "npm run test:unit && npm run test:integration && npm run test:e2e",
+    "test:unit": "npm run test:unit --prefix server && npm run test:unit --prefix client",
+    "test:integration": "npm run test:integration --prefix server && npm run test:integration --prefix client",
+    "test:e2e": "npm run test:e2e --prefix client"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
+
