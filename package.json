@@ -11,7 +11,8 @@
     "test:e2e": "npm run test:e2e --prefix client"
   },
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "jest-environment-jsdom": "^29.7.0"
   }
 }
 

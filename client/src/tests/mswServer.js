@@ -1,9 +1,9 @@
-import { setupServer } from 'msw/node';
-import { rest } from 'msw';
+const { setupServer } = require('msw/node');
+const { rest } = require('msw');
 
-export const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
 
-export const handlers = [
+const handlers = [
   rest.get(`${API_URL}/posts`, (req, res, ctx) => {
     const category = req.url.searchParams.get('category');
 
@@ -42,6 +42,12 @@ export const handlers = [
   })
 ];
 
-export const server = setupServer(...handlers);
-export { rest };
+const server = setupServer(...handlers);
+
+module.exports = {
+  API_URL,
+  handlers,
+  server,
+  rest
+};
 

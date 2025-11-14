@@ -30,7 +30,10 @@ module.exports = {
       },
       setupFilesAfterEnv: ['<rootDir>/client/src/tests/setup.js'],
       transform: {
-        '^.+\\.(js|jsx)$': 'babel-jest',
+        '^.+\\.(js|jsx)$': [
+          'babel-jest',
+          { configFile: require.resolve('./client/babel.config.cjs') }
+        ],
       },
       coverageDirectory: '<rootDir>/coverage/client',
       collectCoverageFrom: [

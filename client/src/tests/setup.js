@@ -1,6 +1,7 @@
-import '@testing-library/jest-dom';
-import 'whatwg-fetch';
-import { server } from './mswServer';
+require('@testing-library/jest-dom');
+require('whatwg-fetch');
+
+const { server } = require('./mswServer');
 
 beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
